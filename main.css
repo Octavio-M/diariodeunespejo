@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yomogi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap");
+:root {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+* :before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Caveat", cursive;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("/img/fondo.png") center repeat;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.7em;
+}
+
+.book {
+  margin-top: 1rem;
+  perspective: 250vw;
+  transition: opacity 0.4s 0.2s;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/img/libro.PNG") center/100% no-repeat;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .book {
+    width: 35vw;
+    height: 60vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .book {
+    width: 35vw;
+    height: 60vh;
+  }
+}
+@media (min-width: 992px) and (max-width: 1366.98px) {
+  .book {
+    margin-top: 0.1rem;
+    width: 1000px;
+    height: 670px;
+  }
+}
+@media (min-width: 1367px) {
+  .book {
+    margin-top: 0.5rem;
+    width: 1000px;
+    height: 721px;
+  }
+}
+.book .pages {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 4px;
+  margin: 1rem 0 0 1.4rem;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .book .pages {
+    width: 30vw;
+    height: 55vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .book .pages {
+    width: 30vw;
+    height: 55vh;
+  }
+}
+@media (min-width: 992px) and (max-width: 1366.98px) {
+  .book .pages {
+    width: 950px;
+    height: 660px;
+    margin: 0.2rem 0 0 1.4rem;
+  }
+}
+@media (min-width: 1367px) {
+  .book .pages {
+    width: 950px;
+    height: 685px;
+  }
+}
+.book .page {
+  float: none;
+  clear: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 0 0;
+  transition: transform 1.4s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.356), rgba(255, 255, 255, 0.356)), url("/img/textura.jpg");
+  background-size: auto 100%;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .book .page {
+    width: 30vw;
+    height: 55vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .book .page {
+    width: 30vw;
+    height: 55vh;
+  }
+}
+@media (min-width: 992px) and (max-width: 1366.98px) {
+  .book .page {
+    width: 475px;
+    height: 660px;
+  }
+}
+@media (min-width: 1367px) {
+  .book .page {
+    width: 475px;
+    height: 685px;
+  }
+}
+.book .page:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.7s;
+  z-index: 2;
+}
+.book .page:nth-child(odd) {
+  pointer-events: all;
+  transform: rotateY(0deg);
+  right: 0;
+  border-radius: 0 4px 4px 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%) url("/img/textura.jpg");
+}
+.book .page:nth-child(odd):hover {
+  transform: rotateY(-15deg);
+}
+.book .page:nth-child(odd):hover:before {
+  background: rgba(0, 0, 0, 0.03);
+}
+.book .page:nth-child(odd):before {
+  background: rgba(0, 0, 0, 0);
+}
+.book .page:nth-child(even) {
+  pointer-events: none;
+  transform: rotateY(180deg);
+  transform-origin: 100% 0;
+  left: 0;
+  border-radius: 4px 0 0 4px;
+  border-color: black;
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%) url("/img/textura.jpg");
+}
+.book .page:nth-child(even):before {
+  background: rgba(0, 0, 0, 0.2);
+}
+.book .page.grabbing {
+  transition: none;
+}
+.book .page.flipped:nth-child(odd) {
+  pointer-events: none;
+  transform: rotateY(-180deg);
+}
+.book .page.flipped:nth-child(odd):before {
+  background: rgba(0, 0, 0, 0.2);
+}
+.book .page.flipped:nth-child(even) {
+  pointer-events: all;
+  transform: rotateY(0deg);
+}
+.book .page.flipped:nth-child(even):hover {
+  transform: rotateY(15deg);
+}
+.book .page.flipped:nth-child(even):hover:before {
+  background: rgba(0, 0, 0, 0.03);
+}
+.book .page.flipped:nth-child(even):before {
+  background: rgba(0, 0, 0, 0);
+}
+
+p {
+  margin: 1rem 1rem 0.5rem 1rem;
+  text-align: left;
+  font-size: 1.7rem;
+  color: #000000;
+}
+@media (min-width: 992px) and (max-width: 1366.98px) {
+  p {
+    margin: 0.4rem 1rem 0.5rem 1rem;
+  }
+}
+
+.titulo {
+  line-height: 24rem;
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.notas {
+  padding: 0.6rem;
+  margin-top: 0.2rem;
+  font-size: 1.5rem;
+}
+@media (min-width: 1367px) {
+  .notas {
+    padding: 0.8rem;
+  }
+}
+
+img {
+  display: block;
+  margin: 0.5rem auto;
+}
+img#cuaderno {
+  width: 85%;
+  height: 85%;
+}
+img#final {
+  margin-top: 5rem;
+  width: 90%;
+  height: 90%;
+}/*# sourceMappingURL=main.css.map */
