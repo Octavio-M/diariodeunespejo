@@ -23,45 +23,67 @@ body {
 }
 
 i#aviso {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-.book {
+.libro {
   margin-top: 1rem;
   perspective: 250vw;
   transition: opacity 0.4s 0.2s;
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/diariodeunespejo/img/libro.PNG") center/100% no-repeat;
+  /*.pagina:nth-child(odd):hover:before {
+      background: rgba(0, 0, 0, 0.03);
+  }
+  .pagina:nth-child(odd):before {
+      background: rgba(0, 0, 0, 0);
+  }*/
+  /* .pagina:nth-child(even):before {
+       background: rgba(0, 0, 0, 0.2);
+   }*/
+  /* .pagina.flipped:nth-child(odd):before {
+       background: rgba(0, 0, 0, 0.2);
+   }*/
+  /* .pagina.flipped:nth-child(even):hover:before {
+       background: rgba(0, 0, 0, 0.03);
+   }
+   .pagina.flipped:nth-child(even):before {
+       background: rgba(0, 0, 0, 0);
+   }*/
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .book {
+  .libro {
     width: 35vw;
     height: 60vh;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .book {
+  .libro {
     width: 35vw;
     height: 60vh;
   }
 }
 @media (min-width: 992px) and (max-width: 1366.98px) {
-  .book {
+  .libro {
     margin-top: 0.1rem;
     width: 1000px;
     height: 665px;
   }
 }
 @media (min-width: 1367px) {
-  .book {
+  .libro {
     margin-top: 0.5rem;
     width: 1000px;
     height: 721px;
   }
 }
-.book .pages {
+.libro .container-paginas {
   position: relative;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -70,31 +92,31 @@ i#aviso {
   margin: 1rem 0 0 1.4rem;
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .book .pages {
+  .libro .container-paginas {
     width: 30vw;
     height: 55vh;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .book .pages {
+  .libro .container-paginas {
     width: 30vw;
     height: 55vh;
   }
 }
 @media (min-width: 992px) and (max-width: 1366.98px) {
-  .book .pages {
+  .libro .container-paginas {
     width: 950px;
     height: 660px;
     margin: 0.2rem 0 0 1.4rem;
   }
 }
 @media (min-width: 1367px) {
-  .book .pages {
+  .libro .container-paginas {
     width: 950px;
     height: 685px;
   }
 }
-.book .page {
+.libro .pagina {
   float: none;
   clear: none;
   margin: 0;
@@ -114,30 +136,30 @@ i#aviso {
   background-size: auto 100%;
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .book .page {
+  .libro .pagina {
     width: 30vw;
     height: 55vh;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .book .page {
+  .libro .pagina {
     width: 30vw;
     height: 55vh;
   }
 }
 @media (min-width: 992px) and (max-width: 1366.98px) {
-  .book .page {
+  .libro .pagina {
     width: 475px;
     height: 660px;
   }
 }
 @media (min-width: 1367px) {
-  .book .page {
+  .libro .pagina {
     width: 475px;
     height: 685px;
   }
 }
-.book .page:before {
+.libro .pagina:before {
   content: "";
   position: absolute;
   top: 0;
@@ -148,56 +170,36 @@ i#aviso {
   transition: background 0.7s;
   z-index: 2;
 }
-.book .page:nth-child(odd) {
+.libro .pagina:nth-child(odd) {
   pointer-events: all;
   transform: rotateY(0deg);
   right: 0;
   border-radius: 0 4px 4px 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%) url("/diariodeunespejo/img/textura.jpg");
 }
-.book .page:nth-child(odd):hover {
+.libro .pagina:nth-child(odd):hover {
   transform: rotateY(-15deg);
 }
-.book .page:nth-child(odd):hover:before {
-  background: rgba(0, 0, 0, 0.03);
-}
-.book .page:nth-child(odd):before {
-  background: rgba(0, 0, 0, 0);
-}
-.book .page:nth-child(even) {
+.libro .pagina:nth-child(even) {
   pointer-events: none;
   transform: rotateY(180deg);
   transform-origin: 100% 0;
   left: 0;
   border-radius: 4px 0 0 4px;
   border-color: black;
-  background-image: linear-gradient(to left, rgba(255, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%) url("/diariodeunespejo/img/textura.jpg");
 }
-.book .page:nth-child(even):before {
-  background: rgba(0, 0, 0, 0.2);
-}
-.book .page.grabbing {
+.libro .pagina.grabbing {
   transition: none;
 }
-.book .page.flipped:nth-child(odd) {
+.libro .pagina.flipped:nth-child(odd) {
   pointer-events: none;
   transform: rotateY(-180deg);
 }
-.book .page.flipped:nth-child(odd):before {
-  background: rgba(0, 0, 0, 0.2);
-}
-.book .page.flipped:nth-child(even) {
+.libro .pagina.flipped:nth-child(even) {
   pointer-events: all;
   transform: rotateY(0deg);
 }
-.book .page.flipped:nth-child(even):hover {
+.libro .pagina.flipped:nth-child(even):hover {
   transform: rotateY(15deg);
-}
-.book .page.flipped:nth-child(even):hover:before {
-  background: rgba(0, 0, 0, 0.03);
-}
-.book .page.flipped:nth-child(even):before {
-  background: rgba(0, 0, 0, 0);
 }
 
 p {

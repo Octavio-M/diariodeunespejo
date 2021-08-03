@@ -1,20 +1,21 @@
-var pages = document.getElementsByClassName('page');
-for(var i = 0; i < pages.length; i++)
+//Por https://codepen.io/captain_anonym0us
+var paginas = document.getElementsByClassName('pagina');
+for(var i = 0; i < paginas.length; i++)
 {
-  var page = pages[i];
+  var pagina = paginas[i];
   if (i % 2 === 0)
   {
-    page.style.zIndex = (pages.length - i);
+    pagina.style.zIndex = (paginas.length - i);
   }
 }
 
 document.addEventListener('DOMContentLoaded', function(){
   let clickeo = 0; //Variable para que no se bugueen las páginas al pasarlas demasiado rápido
-  for(var i = 0; i < pages.length; i++)
+  for(var i = 0; i < paginas.length; i++)
   {
-    //Or var page = pages[i];
-    pages[i].pageNum = i + 1;
-    pages[i].onclick=function()
+    //Or var pagina = paginas[i];
+    paginas[i].pageNum = i + 1;
+    paginas[i].onclick=function()
     {
       if (clickeo == 0) { 
         if (this.pageNum % 2 === 0)
