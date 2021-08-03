@@ -15,7 +15,7 @@
 body {
   font-family: "Caveat", cursive;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("/img/fondo.png") center repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("/diariodeunespejo/img/fondo.png") center repeat;
   min-height: 100%;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ body {
   margin-top: 1rem;
   perspective: 250vw;
   transition: opacity 0.4s 0.2s;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/img/libro.PNG") center/100% no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/diariodeunespejo/img/libro.PNG") center/100% no-repeat;
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .book {
@@ -104,7 +104,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: linear-gradient(rgba(255, 255, 255, 0.356), rgba(255, 255, 255, 0.356)), url("/img/textura.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.356), rgba(255, 255, 255, 0.356)), url("/diariodeunespejo/img/textura.jpg");
   background-size: auto 100%;
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -147,7 +147,7 @@ body {
   transform: rotateY(0deg);
   right: 0;
   border-radius: 0 4px 4px 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%) url("/img/textura.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%) url("/diariodeunespejo/img/textura.jpg");
 }
 .book .page:nth-child(odd):hover {
   transform: rotateY(-15deg);
@@ -165,7 +165,7 @@ body {
   left: 0;
   border-radius: 4px 0 0 4px;
   border-color: black;
-  background-image: linear-gradient(to left, rgba(255, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%) url("/img/textura.jpg");
+  background-image: linear-gradient(to left, rgba(255, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%) url("/diariodeunespejo/img/textura.jpg");
 }
 .book .page:nth-child(even):before {
   background: rgba(0, 0, 0, 0.2);
